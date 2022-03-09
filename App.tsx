@@ -1,20 +1,12 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { ActivityIndicator } from 'react-native';
+import useCachedResources from './src/hooks/utilities/useCachedResources';
+import App from './src/screens/AppScreen';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+export default function (): JSX.Element {
+  const isLoadingComplete = useCachedResources();
+  if (!isLoadingComplete) {
+    return <ActivityIndicator />;
+  }
+  return <App />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
