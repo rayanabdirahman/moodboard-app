@@ -1,7 +1,7 @@
 import React from 'react';
 import { ActivityIndicator } from 'react-native';
 import useCachedResources from './src/hooks/utilities/useCachedResources';
-import App from './src/screens/AppScreen';
+import App from './src/screens/App';
 
 export default function (): JSX.Element {
   const isLoadingComplete = useCachedResources();
