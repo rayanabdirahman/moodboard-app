@@ -1,15 +1,18 @@
 import React from 'react';
-import { ImageBackground, Text, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import theme from '../../../constants/styles/Themes';
-
-const splashImageRoute = require('../../../../assets/splash.png');
 
 const SplashScreen: React.FC = () => {
   return (
-    <ImageBackground
-      style={{ flex: 1, backgroundColor: theme.color.brand }}
-      source={splashImageRoute}
-    />
+    <View
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: theme.color.brand
+      }}
+    >
+      <ActivityIndicator size="large" color={theme.color.white} />
+    </View>
   );
 };
 

@@ -25,8 +25,11 @@ export default function useCachedResources(): boolean {
           `[useCachedResources] - error when loading resources: ${e}`
         );
       } finally {
-        setLoadingComplete(true);
-        console.log('[useCachedResources] - Caching resources completed');
+        setTimeout(() => {
+          // navigation.navigate(MainRoutes.Home);
+          setLoadingComplete(true);
+          console.log('[useCachedResources] - Caching resources completed');
+        }, 2000);
       }
     }
 
