@@ -1,8 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
+import SignInContainer from '../../../containers/SignIn';
 
-const SignInScreen: React.FC = () => {
-  return <Text>SignInScreen</Text>;
-};
-
-export default SignInScreen;
+export default SignInContainer;

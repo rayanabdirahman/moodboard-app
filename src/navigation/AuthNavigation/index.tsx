@@ -11,7 +11,8 @@ const AuthNavigation = (): React.ReactElement => {
       initialRouteName={AuthRoutes.SIGN_UP}
       screenOptions={{
         headerTitle: '',
-        headerShadowVisible: false
+        headerShadowVisible: false,
+        headerLeft: () => null
       }}
     >
       <AuthStack.Screen name={AuthRoutes.SIGN_UP} component={SignUpScreen} />
