@@ -1,10 +1,12 @@
 import React from 'react';
 import theme from '../../../constants/styles/theme';
-import { VStack, Heading, Text } from '../../atoms';
+import { VStack, Heading, Text, Link, HStack } from '../../atoms';
 
 export type Props = {
+  page: 'SignUp' | 'SignIn';
   heading: string;
   subHeading: string;
+  footerLink: () => void;
 };
 
 const SplashLayout: React.FC<Props> = ({ children, ...props }) => (
@@ -23,8 +25,28 @@ const SplashLayout: React.FC<Props> = ({ children, ...props }) => (
       </VStack>
     </VStack>
 
-    <VStack flex={0.2} backgroundColor={theme.color.gray_100}>
-      <Text>Footer</Text>
+    <VStack
+      flex={0.2}
+      justifyContent="center"
+      backgroundColor={theme.color.gray_100}
+    >
+      <HStack alignContent="center" justifyContent="center">
+        {props.page === 'SignUp' ? (
+          <>
+            <Text textAlign="center" secondary>
+              Already have an account?
+            </Text>
+            <Link secondary>Sign in</Link>
+          </>
+        ) : (
+          <>
+            <Text textAlign="center" secondary>
+              Don’t have an account?
+            </Text>
+            <Link secondary>Sign up</Link>
+          </>
+        )}
+      </HStack>
     </VStack>
   </VStack>
 );
