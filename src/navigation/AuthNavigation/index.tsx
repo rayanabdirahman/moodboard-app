@@ -1,5 +1,12 @@
 import React from 'react';
-import { AuthStack, AuthRoutes, SignUpStack, SignUpRoutes } from './routes';
+import {
+  AuthStack,
+  AuthRoutes,
+  SignUpStack,
+  SignUpRoutes,
+  SignInStack,
+  SignInRoutes
+} from './routes';
 import SignUpScreen from '../../screens/Auth/SignUp';
 import SignInScreen from '../../screens/Auth/SignIn';
 
@@ -20,18 +27,33 @@ const SignUpNavigation = (): React.ReactElement => {
   );
 };
 
+const SignInNavigation = (): React.ReactElement => {
+  return (
+    <SignInStack.Navigator
+      initialRouteName={SignInRoutes.SPLASH}
+      screenOptions={screenOptions}
+    >
+      <SignInStack.Screen name={SignInRoutes.SPLASH} component={SignInScreen} />
+    </SignInStack.Navigator>
+  );
+};
+
 const AuthNavigation = (): React.ReactElement => {
   return (
     <AuthStack.Navigator
       initialRouteName={AuthRoutes.SIGN_UP}
-      screenOptions={screenOptions}
+      screenOptions={{ headerShown: false }}
     >
       <AuthStack.Screen
         name={AuthRoutes.SIGN_UP}
         component={SignUpNavigation}
       />
-      <AuthStack.Screen name={AuthRoutes.SIGN_IN} component={SignInScreen} />
+      <AuthStack.Screen
+        name={AuthRoutes.SIGN_IN}
+        component={SignInNavigation}
+      />
     </AuthStack.Navigator>
   );
 };
+
 export default AuthNavigation;

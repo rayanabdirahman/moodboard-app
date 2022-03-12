@@ -14,6 +14,11 @@ export enum SignUpRoutes {
   USERNAME = 'SignUpUsername'
 }
 
+export enum SignInRoutes {
+  SPLASH = 'SignInSplash',
+  FORM = 'SignInForm'
+}
+
 export type SignUpStackParamList = {
   [SignUpRoutes.SPLASH]: undefined;
   [SignUpRoutes.BIRTHDAY]: undefined;
@@ -22,11 +27,18 @@ export type SignUpStackParamList = {
   [SignUpRoutes.USERNAME]: undefined;
 };
 
+export type SignInStackParamList = {
+  [SignInRoutes.SPLASH]: undefined;
+  [SignInRoutes.FORM]: undefined;
+};
+
 export type AuthStackParamList = {
   [AuthRoutes.SIGN_UP]: NavigatorScreenParams<SignUpStackParamList>;
-  [AuthRoutes.SIGN_IN]: undefined;
+  [AuthRoutes.SIGN_IN]: NavigatorScreenParams<SignInStackParamList>;
 };
 
 export const AuthStack = createStackNavigator<AuthStackParamList>();
 
 export const SignUpStack = createStackNavigator<SignUpStackParamList>();
+
+export const SignInStack = createStackNavigator<SignInStackParamList>();
