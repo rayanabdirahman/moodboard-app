@@ -30,22 +30,15 @@ const SplashLayout: React.FC<Props> = ({ children, ...props }) => (
       justifyContent="center"
       backgroundColor={theme.color.gray_100}
     >
-      <HStack alignContent="center" justifyContent="center">
-        {props.page === 'SignUp' ? (
-          <>
-            <Text textAlign="center" secondary>
-              Already have an account?
-            </Text>
-            <Link secondary>Sign in</Link>
-          </>
-        ) : (
-          <>
-            <Text textAlign="center" secondary>
-              Don’t have an account?
-            </Text>
-            <Link secondary>Sign up</Link>
-          </>
-        )}
+      <HStack flex={0.2} alignContent="center" justifyContent="center">
+        <Text textAlign="center" secondary>
+          {props.page === 'SignUp'
+            ? 'Already have an account'
+            : "Don't have an account?"}
+        </Text>
+        <Link onPress={props.footerLink} secondary>
+          {props.page === 'SignUp' ? 'Sign in' : 'Sign up'}
+        </Link>
       </HStack>
     </VStack>
   </VStack>
