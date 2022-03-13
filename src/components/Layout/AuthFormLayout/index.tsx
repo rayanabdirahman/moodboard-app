@@ -14,7 +14,7 @@ const AuthFormLayout: React.FC<Props> = ({ children, ...props }) => (
         <Heading color={theme.color.black} size="md">
           {props.heading}
         </Heading>
-        <Text secondary>{props.subHeading}</Text>
+        {props.subHeading && <Text secondary>{props.subHeading}</Text>}
       </VStack>
       <VStack justifyContent="center" space={4}>
         {children}

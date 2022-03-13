@@ -30,7 +30,7 @@ const SignUpSplashContainer: React.FC<Props> = ({ navigation }) => {
       <Button
         onPress={() =>
           navigation.navigate(AuthRoutes.SIGN_UP, {
-            screen: SignUpRoutes.BIRTHDAY
+            screen: SignUpRoutes.EMAIL
           })
         }
         primary
