@@ -20,6 +20,13 @@ export const button = styled(TouchableOpacity)<Props>`
       background-color: ${theme.color.white};
       border-color: ${secondary ? theme.color.black : theme.color.brand};
     `}
+
+  ${({ theme, disabled, loading }) =>
+    (disabled || loading) &&
+    css`
+      background-color: ${theme.color.gray_100};
+      border-color: ${theme.color.gray_100};
+    `}
 `;
 
 export const text = styled(Text)<Props>`
@@ -30,5 +37,11 @@ export const text = styled(Text)<Props>`
     outlined &&
     css`
       color: ${secondary ? theme.color.black : theme.color.brand};
+    `}
+
+  ${({ theme, disabled }) =>
+    disabled &&
+    css`
+      color: ${theme.color.gray};
     `}
 `;
