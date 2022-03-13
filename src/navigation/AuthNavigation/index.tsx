@@ -1,24 +1,7 @@
 import React from 'react';
-import { AuthStack, AuthRoutes, SignInStack, SignInRoutes } from './routes';
-import SignInScreen from '../../screens/Auth/SignIn';
+import { AuthStack, AuthRoutes } from './routes';
 import SignUpNavigation from './navigators/SignUpNavigation';
-
-const screenOptions = {
-  headerTitle: '',
-  headerShadowVisible: false,
-  headerLeft: () => null
-};
-
-const SignInNavigation = (): React.ReactElement => {
-  return (
-    <SignInStack.Navigator
-      initialRouteName={SignInRoutes.SPLASH}
-      screenOptions={screenOptions}
-    >
-      <SignInStack.Screen name={SignInRoutes.SPLASH} component={SignInScreen} />
-    </SignInStack.Navigator>
-  );
-};
+import SignInNavigation from './navigators/SignInNavigation';
 
 const AuthNavigation = (): React.ReactElement => {
   return (

@@ -19,6 +19,11 @@ export enum SignInRoutes {
   FORM = 'SignInForm'
 }
 
+export type AuthStackParamList = {
+  [AuthRoutes.SIGN_UP]: NavigatorScreenParams<SignUpStackParamList>;
+  [AuthRoutes.SIGN_IN]: NavigatorScreenParams<SignInStackParamList>;
+};
+
 export type SignUpStackParamList = {
   [SignUpRoutes.SPLASH]: undefined;
   [SignUpRoutes.BIRTHDAY]: undefined;
@@ -30,11 +35,6 @@ export type SignUpStackParamList = {
 export type SignInStackParamList = {
   [SignInRoutes.SPLASH]: undefined;
   [SignInRoutes.FORM]: undefined;
-};
-
-export type AuthStackParamList = {
-  [AuthRoutes.SIGN_UP]: NavigatorScreenParams<SignUpStackParamList>;
-  [AuthRoutes.SIGN_IN]: NavigatorScreenParams<SignInStackParamList>;
 };
 
 export const AuthStack = createStackNavigator<AuthStackParamList>();
