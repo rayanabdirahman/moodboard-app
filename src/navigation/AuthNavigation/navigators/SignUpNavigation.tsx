@@ -7,11 +7,13 @@ import {
   SignUpPasswordScreen,
   SignUpUsernameScreen
 } from '../../../screens/Auth/SignUp';
+import BackButton from '../../BackButton';
 
 const screenOptions = {
-  headerTitle: '',
+  headerTitle: 'Sign up',
   headerShadowVisible: false,
-  headerLeft: () => null
+  headerBackTitle: ' ',
+  headerBackImage: () => <BackButton />
 };
 
 const SignUpNavigation = (): React.ReactElement => {
@@ -23,6 +25,11 @@ const SignUpNavigation = (): React.ReactElement => {
       <SignUpStack.Screen
         name={SignUpRoutes.SPLASH}
         component={SignUpSplashScreen}
+        options={{
+          ...screenOptions,
+          headerTitle: '',
+          headerLeft: () => null
+        }}
       />
       <SignUpStack.Screen
         name={SignUpRoutes.BIRTHDAY}
