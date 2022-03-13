@@ -6,6 +6,7 @@ import { SignInNavigationProp } from '../../../navigation/types';
 import { SignInValidationSchema } from '../../../validation/AccountValidation';
 import { Stack } from 'native-base';
 import { Button, Input } from '../../../components/atoms';
+import useSignInForm from '../hooks/useSignInForm';
 
 const Content = {
   heading: 'Welcome back',
@@ -17,14 +18,14 @@ type Props = {
 };
 
 const SignInFormContainer: React.FC<Props> = ({ navigation }) => {
-  const initialValues = { email: '', password: '' };
-  const isLoading = false;
+  const { isLoading, initialValues, onSubmit } = useSignInForm();
+
   return (
     <AuthFormLayout heading={Content.heading} subHeading={Content.subHeading}>
       <Formik
         initialValues={initialValues}
         validationSchema={SignInValidationSchema}
-        onSubmit={(model) => console.log('signin model: ', model)}
+        onSubmit={onSubmit}
       >
         {(formik) => (
           <Stack space={10}>

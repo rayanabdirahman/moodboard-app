@@ -9,3 +9,8 @@ export type UserModel = {
   createdAt: string;
   role: AccountRolesEnum[];
 };
+
+export type SignInModel = {
+  email: string;
+  password: string;
+};
