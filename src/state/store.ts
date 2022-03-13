@@ -8,7 +8,9 @@ export type State = {
   session: SessionState;
 };
 
-export const store = createStore(
+const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middlewares))
 );
+
+export default store;

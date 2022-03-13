@@ -6,7 +6,7 @@ import App from './src/screens/App';
 import SplashScreen from './src/screens/Auth/Splash';
 import useCachedResources from './src/hooks/utilities/useCachedResources';
 import theme from './src/constants/styles/theme';
-import { store } from './src/store';
+import store from './src/state/store';
 
 export default function (): JSX.Element {
   const isLoadingComplete = useCachedResources();
