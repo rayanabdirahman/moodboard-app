@@ -1,3 +1,14 @@
+export enum AsyncActionStatus {
+  STARTED = 'STARTED',
+  SUCCEEDED = 'SUCCEEDED',
+  FAILED = 'FAILED'
+}
+
+export enum UIActionType {
+  SET_LOADING_ON = '[UI]: SET_LOADING_ON',
+  SET_LOADING_OFF = '[UI]: SET_LOADING_OFF'
+}
+
 export enum SessionActionType {
   SIGN_UP = '[Session]: SIGN_UP',
   SIGN_UP_SUCCESS = '[Session]: SIGN_UP_SUCCESS',
