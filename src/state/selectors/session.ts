@@ -4,4 +4,8 @@ import { getLoadingState } from './ui';
 
 export const getAuthenticatedUser = ({ session }: State) => session.user;
 
+export const getGoogleSignUpLoading = getLoadingState(
+  SessionActionType.GOOGLE_SIGN_UP
+);
+
 export const getSignInLoading = getLoadingState(SessionActionType.SIGN_IN);

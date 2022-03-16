@@ -14,3 +14,8 @@ export type SignInModel = {
   email: string;
   password: string;
 };
+
+export type AccountAccessReturnType = {
+  token: string;
+  user: UserModel;
+};
