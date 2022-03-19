@@ -14,7 +14,7 @@ type Props = {
 };
 
 const SignUpSplashContainer: React.FC<Props> = ({ navigation }) => {
-  const { isLoading, onGoogleSignUp } = useGoogleAuth();
+  const { onGoogleSignUp } = useGoogleAuth();
   const navigateToSignUpForm = () =>
     navigation.navigate(AuthRoutes.SIGN_UP, {
       screen: SignUpRoutes.EMAIL
@@ -32,7 +32,7 @@ const SignUpSplashContainer: React.FC<Props> = ({ navigation }) => {
         Continue with email
       </Button>
 
-      <Button secondary outlined onPress={onGoogleSignUp} loading={isLoading}>
+      <Button secondary outlined onPress={onGoogleSignUp}>
         Continue with Google
       </Button>
     </SplashLayout>

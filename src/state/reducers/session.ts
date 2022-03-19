@@ -10,7 +10,8 @@ const initialState: SessionState = {
 export default (state = initialState, action: AnyAction) => {
   switch (action.type) {
     case SessionActionType.SIGN_IN_SUCCESS:
-    case SessionActionType.SIGN_UP_SUCCESS: {
+    case SessionActionType.SIGN_UP_SUCCESS:
+    case SessionActionType.GOOGLE_SIGN_UP_SUCCESS: {
       const { token, user } = action.payload;
       return { ...state, token, user };
     }

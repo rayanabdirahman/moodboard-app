@@ -31,7 +31,7 @@ const SplashLayout: React.FC<Props> = ({ children, ...props }) => (
       backgroundColor={theme.color.gray_100}
     >
       <HStack flex={0.2} alignContent="center" justifyContent="center">
-        <Text textAlign="center" secondary>
+        <Text textAlign="center">
           {props.page === 'SignUp'
             ? 'Already have an account'
             : "Don't have an account?"}

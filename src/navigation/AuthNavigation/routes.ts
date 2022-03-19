@@ -29,7 +29,7 @@ export type SignUpStackParamList = {
   [SignUpRoutes.BIRTHDAY]: undefined;
   [SignUpRoutes.EMAIL]: undefined;
   [SignUpRoutes.PASSWORD]: undefined;
-  [SignUpRoutes.USERNAME]: undefined;
+  [SignUpRoutes.USERNAME]: { oauthAccessToken: string } | undefined;
 };
 
 export type SignInStackParamList = {
