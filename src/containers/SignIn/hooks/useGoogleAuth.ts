@@ -6,7 +6,7 @@ import { SignInRoutes } from '../../../navigation/AuthNavigation/routes';
 import { SignInNavigationProp } from '../../../navigation/types';
 import { GoogleSignInAction } from '../../../state/actions/session';
 import { getGoogleSignInLoading } from '../../../state/selectors/session';
-import { useAppDispatch, useAppSelector } from '../../../state/types';
+import { useAppDispatch, useAppSelector } from '../../../state/hookTypes';
 
 type ReturnType = {
   isLoading: boolean;

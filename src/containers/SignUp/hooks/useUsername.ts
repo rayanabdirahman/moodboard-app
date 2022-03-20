@@ -4,7 +4,7 @@ import {
   SignUpStackParamList
 } from '../../../navigation/AuthNavigation/routes';
 import { SignUpNavigationProp } from '../../../navigation/types';
-import { useAppDispatch, useAppSelector } from '../../../state/types';
+import { useAppDispatch, useAppSelector } from '../../../state/hookTypes';
 import { GoogleSignUpAction } from '../../../state/actions/session';
 import { getGoogleSignUpLoading } from '../../../state/selectors/session';
 
