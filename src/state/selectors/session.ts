@@ -8,4 +8,8 @@ export const getGoogleSignUpLoading = getLoadingState(
   SessionActionType.GOOGLE_SIGN_UP
 );
 
+export const getGoogleSignInLoading = getLoadingState(
+  SessionActionType.GOOGLE_SIGN_IN
+);
+
 export const getSignInLoading = getLoadingState(SessionActionType.SIGN_IN);

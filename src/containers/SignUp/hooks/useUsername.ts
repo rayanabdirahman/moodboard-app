@@ -27,7 +27,7 @@ export default function useUsername(): ReturnType {
     if (route.params?.oauthAccessToken) {
       return dispatch(
         GoogleSignUpAction(route.params?.oauthAccessToken, values?.username)
-      );
+      ).then(() => navigation.navigate(SignUpRoutes.FEED));
     }
     console.log('non oauth signin model: ', values);
   };

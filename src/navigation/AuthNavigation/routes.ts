@@ -11,7 +11,8 @@ export enum SignUpRoutes {
   BIRTHDAY = 'SignUpBirthday',
   EMAIL = 'SignUpEmail',
   PASSWORD = 'SignUpPassword',
-  USERNAME = 'SignUpUsername'
+  USERNAME = 'SignUpUsername',
+  FEED = 'Feed'
 }
 
 export enum SignInRoutes {
@@ -30,6 +31,7 @@ export type SignUpStackParamList = {
   [SignUpRoutes.EMAIL]: undefined;
   [SignUpRoutes.PASSWORD]: undefined;
   [SignUpRoutes.USERNAME]: { oauthAccessToken: string } | undefined;
+  [SignUpRoutes.FEED]: undefined;
 };
 
 export type SignInStackParamList = {

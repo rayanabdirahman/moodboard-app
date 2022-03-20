@@ -1,14 +1,5 @@
 import { AccountRolesEnum } from '../enums/account';
 
-export type IGoogleSignUpModel = {
-  googleId: string;
-  name: string;
-  username: string;
-  email: string;
-  avatar: string;
-  role?: AccountRolesEnum[];
-};
-
 export type IGoogleOauthUserModel = {
   id: string;
   name: string;
@@ -18,6 +9,19 @@ export type IGoogleOauthUserModel = {
   locale: string;
   picture: string;
   verified_email: boolean;
+};
+
+export type IGoogleSignUpModel = {
+  googleId: string;
+  name: string;
+  username: string;
+  email: string;
+  avatar: string;
+  role?: AccountRolesEnum[];
+};
+
+export type IGoogleSignInModel = {
+  googleId: string;
 };
 
 export type UserModel = {
@@ -36,6 +40,6 @@ export type SignInModel = {
 };
 
 export type AccountAccessReturnType = {
-  token: string;
+  accessToken: string;
   user: UserModel;
 };

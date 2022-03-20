@@ -8,6 +8,7 @@ import {
   SignUpUsernameScreen
 } from '../../../screens/Auth/SignUp';
 import BackButton from '../../BackButton';
+import FeedScreen from '../../../screens/Feed';
 
 const screenOptions = {
   headerTitle: 'Sign up',
@@ -47,6 +48,7 @@ const SignUpNavigation = (): React.ReactElement => {
         name={SignUpRoutes.USERNAME}
         component={SignUpUsernameScreen}
       />
+      <SignUpStack.Screen name={SignUpRoutes.FEED} component={FeedScreen} />
     </SignUpStack.Navigator>
   );
 };

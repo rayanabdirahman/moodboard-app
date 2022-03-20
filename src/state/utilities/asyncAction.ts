@@ -58,8 +58,10 @@ export function async(
     try {
       const payload = await action(...args);
       dispatch(succeededAsyncAction(type, payload));
+      return payload;
     } catch (error: any) {
       dispatch(failedAsyncAction(type, error));
+      throw error;
     }
   };
 }

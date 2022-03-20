@@ -6,17 +6,20 @@ import {
 
 type AccountService = {
   GoogleSignUp(
-    accessToken: string,
+    googleAccessToken: string,
     username: string
   ): Promise<AccountAccessReturnType>;
+  GoogleSignIn(googleAccessToken: string): Promise<AccountAccessReturnType>;
 };
 
 const AccountService: AccountService = {
   async GoogleSignUp(
-    accessToken: string,
+    googleAccessToken: string,
     username: string
   ): Promise<AccountAccessReturnType> {
-    const oauthUserInfo = await AccountApi.getGoogleOauthUserInfo(accessToken);
+    const oauthUserInfo = await AccountApi.getGoogleOauthUserInfo(
+      googleAccessToken
+    );
     const model: IGoogleSignUpModel = {
       googleId: oauthUserInfo.id,
       name: oauthUserInfo.name,
@@ -24,8 +27,19 @@ const AccountService: AccountService = {
       username: username,
       avatar: oauthUserInfo.picture
     };
-    const user = await AccountApi.googleSignUp(model);
-    return { user: user, token: accessToken };
+    const { user, accessToken } = await AccountApi.googleSignUp(model);
+    return { user, accessToken };
+  },
+  async GoogleSignIn(
+    googleAccessToken: string
+  ): Promise<AccountAccessReturnType> {
+    const oauthUserInfo = await AccountApi.getGoogleOauthUserInfo(
+      googleAccessToken
+    );
+    const { user, accessToken } = await AccountApi.googleSignIn({
+      googleId: oauthUserInfo.id
+    });
+    return { user, accessToken };
   }
 };
 

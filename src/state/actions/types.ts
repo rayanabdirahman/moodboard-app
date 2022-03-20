@@ -10,12 +10,15 @@ export enum UIActionType {
 }
 
 export enum SessionActionType {
-  SIGN_UP = '[Session]: SIGN_UP',
-  SIGN_UP_SUCCESS = '[Session]: SIGN_UP_SUCCESS',
-  SIGN_UP_FAIL = '[Session]: SIGN_UP_FAIL',
   GOOGLE_SIGN_UP = '[Session]: GOOGLE_SIGN_UP',
   GOOGLE_SIGN_UP_SUCCESS = '[Session]: GOOGLE_SIGN_UP_SUCCESS',
   GOOGLE_SIGN_UP_FAIL = '[Session]: GOOGLE_SIGN_UP_FAIL',
+  GOOGLE_SIGN_IN = '[Session]: GOOGLE_SIGN_IN',
+  GOOGLE_SIGN_IN_SUCCESS = '[Session]: GOOGLE_SIGN_IN_SUCCESS',
+  GOOGLE_SIGN_IN_FAIL = '[Session]: GOOGLE_SIGN_IN_FAIL',
+  SIGN_UP = '[Session]: SIGN_UP',
+  SIGN_UP_SUCCESS = '[Session]: SIGN_UP_SUCCESS',
+  SIGN_UP_FAIL = '[Session]: SIGN_UP_FAIL',
   SIGN_IN = '[Session]: SIGN_IN',
   SIGN_IN_SUCCESS = '[Session]: SIGN_IN_SUCCESS',
   SIGN_IN_FAIL = '[Session]: SIGN_IN_FAIL',
