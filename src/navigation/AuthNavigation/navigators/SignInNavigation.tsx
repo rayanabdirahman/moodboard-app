@@ -5,6 +5,7 @@ import {
   SignInFormScreen
 } from '../../../screens/Auth/SignIn';
 import BackButton from '../../BackButton';
+import FeedScreen from '../../../screens/Feed';
 
 const screenOptions = {
   headerTitle: 'Sign in',
@@ -32,6 +33,7 @@ const SignInNavigation = (): React.ReactElement => {
         name={SignInRoutes.FORM}
         component={SignInFormScreen}
       />
+      <SignInStack.Screen name={SignInRoutes.FEED} component={FeedScreen} />
     </SignInStack.Navigator>
   );
 };

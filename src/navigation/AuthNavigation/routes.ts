@@ -17,7 +17,8 @@ export enum SignUpRoutes {
 
 export enum SignInRoutes {
   SPLASH = 'SignInSplash',
-  FORM = 'SignInForm'
+  FORM = 'SignInForm',
+  FEED = 'Feed'
 }
 
 export type AuthStackParamList = {
@@ -37,6 +38,7 @@ export type SignUpStackParamList = {
 export type SignInStackParamList = {
   [SignInRoutes.SPLASH]: undefined;
   [SignInRoutes.FORM]: undefined;
+  [SignInRoutes.FEED]: undefined;
 };
 
 export const AuthStack = createStackNavigator<AuthStackParamList>();
