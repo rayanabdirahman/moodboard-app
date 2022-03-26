@@ -7,6 +7,7 @@ import {
   IGoogleSignUpModel,
   UserModel
 } from '../domain/interfaces/account';
+import makeRequest from '../utilities/makeRequest';
 
 type IAccountApi = {
   getGoogleOauthUserInfo(
@@ -14,43 +15,42 @@ type IAccountApi = {
   ): Promise<IGoogleOauthUserModel>;
   googleSignUp(model: IGoogleSignUpModel): Promise<any>;
   googleSignIn(model: IGoogleSignInModel): Promise<any>;
+  refreshAccessToken(): Promise<any>;
 };
 
 const AccountApi: IAccountApi = {
   async getGoogleOauthUserInfo(
     googleAccessToken: string
   ): Promise<IGoogleOauthUserModel> {
-    try {
-      const response = await axios.get(`${config.API_GOOGLE_OAUTH_USER_INFO}`, {
-        headers: { Authorization: `Bearer ${googleAccessToken}` }
-      });
+    const response = await makeRequest({
+      method: 'GET',
+      isExternal: true,
+      url: `${config.API_GOOGLE_OAUTH_USER_INFO}`,
+      headers: { Authorization: `Bearer ${googleAccessToken}` }
+    });
 
-      return response.data;
-    } catch (error: any) {
-      throw error.response ? error.response.data.error : error.request;
-    }
+    console.log('GOOGLE SIGNIN RESPONSE: ', response);
+    return response;
   },
   async googleSignUp(model: IGoogleSignUpModel): Promise<any> {
-    try {
-      const response = await axios.post(
-        `${config.API_DEV_URL}/accounts/auth/google/signup`,
-        model
-      );
-      return response.data.data;
-    } catch (error: any) {
-      throw error.response ? error.response.data.error : error.request;
-    }
+    return await makeRequest({
+      url: `/accounts/auth/google/signup`,
+      method: 'POST',
+      data: model
+    });
   },
   async googleSignIn(model: IGoogleSignInModel): Promise<any> {
-    try {
-      const response = await axios.post(
-        `${config.API_DEV_URL}/accounts/auth/google/signin`,
-        model
-      );
-      return response.data.data;
-    } catch (error: any) {
-      throw error.response ? error.response.data.error : error.request;
-    }
+    return await makeRequest({
+      url: `/accounts/auth/google/signin`,
+      method: 'POST',
+      data: model
+    });
+  },
+  async refreshAccessToken(): Promise<any> {
+    return await makeRequest({
+      url: `/accounts/auth/accessToken/refresh`,
+      method: 'GET'
+    });
   }
 };
 
