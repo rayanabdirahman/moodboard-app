@@ -16,6 +16,9 @@ const Content = {
 const SignUpUsernameContainer: React.FC = () => {
   const { isLoading, initialValues, onSubmit } = useUsername();
 
+  // change username hook to sign in and track form inputs with local storage or form context.
+  // check out the accessToken tutorial channel on youtube for React form login
+
   return (
     <AuthFormLayout heading={Content.heading} subHeading={Content.subHeading}>
       <Formik

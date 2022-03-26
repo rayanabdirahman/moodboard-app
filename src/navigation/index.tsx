@@ -2,11 +2,16 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 import AuthNavigation from './AuthNavigation';
+import RootNavigation from './RootNavigation';
 
-export default function Navigation() {
+type Props = {
+  isUserSignedIn: boolean;
+};
+
+export default function Navigation({ isUserSignedIn }: Props) {
   return (
     <NavigationContainer>
-      <AuthNavigation />
+      {isUserSignedIn ? <RootNavigation /> : <AuthNavigation />}
     </NavigationContainer>
   );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Heading } from '../../components/atoms';
+import { Heading } from '../components/atoms';
 
-const FeedScreen: React.FC = () => (
+const FeedScreen = () => (
   <SafeAreaView>
     <Heading size="md">FEED SCREEN</Heading>
   </SafeAreaView>
