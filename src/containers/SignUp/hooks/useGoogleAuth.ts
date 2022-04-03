@@ -28,7 +28,7 @@ export default function useGoogleAuth(): ReturnType {
       const { authentication } = response;
       // try signing user in first to get existing user
       dispatch(GoogleSignInAction(authentication?.accessToken as string))
-        .then(() => navigation.navigate(SignUpRoutes.FEED))
+        // .then(() => navigation.navigate(SignUpRoutes.FEED))
         .catch(() =>
           navigation.navigate(SignUpRoutes.USERNAME, {
             oauthAccessToken: authentication?.accessToken as string

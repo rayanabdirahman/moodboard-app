@@ -6,5 +6,6 @@ export type UIState = {
 
 export type SessionState = {
   user: UserModel | null;
+  isAuthenticated: boolean;
   accessToken: string | null;
 };
